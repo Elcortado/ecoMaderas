@@ -396,6 +396,8 @@
   .feature-thumb {
     border: 1px solid #f0f0f0;
     padding: 5em 3em;
+    -webkit-box-shadow: 6px 3px 78px 23px rgba(0,0,0,0.32); 
+box-shadow: 6px 3px 78px 23px rgba(0,0,0,0.32);
   }
 
   .feature-thumb span {
@@ -458,6 +460,8 @@
     position: relative;
     overflow: hidden;
     text-align: left;
+    -webkit-box-shadow: 6px 3px 78px 23px rgba(0,0,0,0.32); 
+    box-shadow: 6px 3px 78px 23px rgba(0,0,0,0.32);
   }
 
   .team-info {
@@ -465,7 +469,7 @@
   }
 
   .team-image img {
-    width: 100%;
+   width: 100%;
   }
 
   .team-thumb .social-icon {
@@ -481,8 +485,7 @@
   .team-info h3 {
     margin: 0;
   }
-
-
+  
   /*---------------------------------------
       COURSES             
   -----------------------------------------*/
