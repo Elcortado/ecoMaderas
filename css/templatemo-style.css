@@ -481,17 +481,10 @@ box-shadow: 6px 3px 78px 23px rgba(0,0,0,0.32);
     padding: 4px 20px 0 20px;
   }
   #boton{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-left: 20px;
   }
-
-  .team-thumb .social-icon li a {
-    
-    background: #ffffff;
-    color: #252020;
-  }
+  
+  
 
   .team-info h3 {
     margin: 0;
