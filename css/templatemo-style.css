@@ -375,18 +375,20 @@
   .caption h3 a:hover { color: #FF3; }
 
   .home-slider .item-first {
-    background-image: url(../images/machimbres.jpg);
+    background-image: url(../images/portada.png);
 	background-position: center;
   }
 
   .home-slider .item-second {
-    background-image: url(../images/pinturas.jpg);
+    background-image: url(../images/machimbres.jpg);
   }
 
   .home-slider .item-third {
+    background-image: url(../images/pinturas.jpg);
+  }
+  .home-slider .item-fourth {
     background-image: url(../images/herrajes.jpg);
   }
-
 
 
   /*---------------------------------------
@@ -474,11 +476,19 @@ box-shadow: 6px 3px 78px 23px rgba(0,0,0,0.32);
   }
 
   .team-thumb .social-icon {
+    position: relative;
     border-top: 1px solid #f0f0f0;
     padding: 4px 20px 0 20px;
   }
+  #boton{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   .team-thumb .social-icon li a {
+    
     background: #ffffff;
     color: #252020;
   }
