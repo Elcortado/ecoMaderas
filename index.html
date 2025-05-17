@@ -1,433 +1,766 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <meta charset="utf-8">
+    <title>MaderColor</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-     <title>MaderColor</title>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="author" content="">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-     <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon-96x96.png">
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/font-awesome.min.css">
-     <link rel="stylesheet" href="css/owl.carousel.css">
-     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- Favicon -->
+    <link href="img/favicon-96x96.png" rel="icon">
 
-     <!-- MAIN CSS -->
-     <link rel="stylesheet" href="css/templatemo-style.css">
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-     <script type="text/javascript">
-         (function() {
-             // https://dashboard.emailjs.com/admin/account
-             emailjs.init({
-               publicKey: "wi-c-Z5ZJI_MvN3N5",
-             });
-         })();
-     </script>
-     <script type="text/javascript">
-         window.onload = function() {
-             document.getElementById('contact-form').addEventListener('submit', function(event) {
-                 event.preventDefault();
-                 // these IDs from the previous steps
-                 emailjs.sendForm('service_8jttbqm', 'template_vl7qwo8', this)
-                     .then(() => {
-                         alert('MENSAJE ENVIADO!');
-                         document.getElementById('contact-form').reset();
-                     }, (error) => {
-                         console.log('FAILED...', error);
-                     });
-             });
-         }
-     </script>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
-<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
-     <!-- PRE LOADER -->
-     <section class="preloader">
-          <div class="spinner">
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
 
-               <span class="spinner-rotate"></span>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5">
+        <div class="row gx-4 d-none d-lg-flex">
+            <div class="col-lg-6 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <div class="btn-sm-square rounded-circle bg-primary me-2">
+                        <small class="fa fa-map-marker-alt text-white"></small>
+                    </div>
+                    <small>Fontana - Chaco - Argentina</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <div class="btn-sm-square rounded-circle bg-primary me-2">
+                        <small class="fa fa-envelope-open text-white"></small>
+                    </div>
+                    <a href="mailto:madercolorchaco@gmail.com"> madercolorchaco@gmail.com</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <div class="btn-sm-square rounded-circle bg-primary me-2">
+                        <small class="fa fa-phone-alt text-white"></small>
+                    </div>
+                    <small>3625181576</small>
+                </div>
                
-          </div>
-     </section>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
 
 
-     <!-- MENU -->
-     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
-          <div class="container">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+            <h2 style="color: rgb(120, 95, 15);text-shadow: 1px 2px 2px #4E434C;"><strong>Mader</strong></span><span style="color: rgb(29, 188, 26);text-shadow: 1px 2px 2px #4E434C;">Color </h2>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-4 py-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Inicio</a>
+            <!--    <a href="about.html" class="nav-item nav-link">Nosotros</a> -->
+                <a href="service.html" class="nav-item nav-link">Productos</a>
+                <a href="project.html" class="nav-item nav-link">Ofertas Destacadas</a>
+             <!--   <a href="contact.html" class="nav-item nav-link">Contacto</a> -->
+            </div>
+            <div class="h-100 d-lg-inline-flex align-items-center d-none">
+                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="https://www.facebook.com/profile.php?id=61576660550298"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
 
-               <div class="navbar-header">
-                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                    </button>
 
-                    <!-- lOGO TEXT HERE -->
-                    <a href="#" class="navbar-brand" style="font-size: 35px;"><span style="color: rgb(120, 95, 15);text-shadow: 1px 2px 2px #4E434C;"><strong>Mader</strong></span><span style="color: rgb(32, 120, 30);text-shadow: 1px 2px 2px #4E434C;">Color</span></a> 
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 pb-5">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/machimbres.jpg" alt="producto Madera">
+                <div class="carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Excelencia en Maderas y Placas</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Materiales Premium para Tus Proyectos, con la Relación Calidad-Precio que Mereces</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/pinturas.jpg" alt="pinturas">
+                <div class="carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Brillo, Durabilidad y Color</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Pinturas de Alto Rendimiento a Costos Accesibles</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/hq720.jpg" alt="muebles">
+                <div class="carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Muebles de Ensueño, Precios de Realidad</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Muebles premium que elevan tus espacios sin comprometer tu presupuesto</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- Facts Start -->
+  <!--  <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="h-100 bg-dark p-4 p-xl-5">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="btn-square rounded-circle" style="width: 64px; height: 64px; background: #000000;">
+                                <img class="img-fluid" src="img/icon/icon-3.png" alt="Icon">
+                            </div>
+                            <h1 class="display-1 mb-0" style="color: #000000;">01</h1>
+                        </div>
+                        <h5 class="text-white">Home Security</h5>
+                        <hr class="w-25">
+                        <span>Vero elitr justo clita lorem ipsum dolor at sed stet sit diam rebum ipsum et diam justo clita et</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="h-100 bg-dark p-4 p-xl-5">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="btn-square rounded-circle" style="width: 64px; height: 64px; background: #000000;">
+                                <img class="img-fluid" src="img/icon/icon-4.png" alt="Icon">
+                            </div>
+                            <h1 class="display-1 mb-0" style="color: #000000;">02</h1>
+                        </div>
+                        <h5 class="text-white">Access Control</h5>
+                        <hr class="w-25">
+                        <span>Vero elitr justo clita lorem ipsum dolor at sed stet sit diam rebum ipsum et diam justo clita et</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="h-100 bg-dark p-4 p-xl-5">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="btn-square rounded-circle" style="width: 64px; height: 64px; background: #000000;">
+                                <img class="img-fluid" src="img/icon/icon-2.png" alt="Icon">
+                            </div>
+                            <h1 class="display-1 mb-0" style="color: #000000;">03</h1>
+                        </div>
+                        <h5 class="text-white">24/7 Support</h5>
+                        <hr class="w-25">
+                        <span>Vero elitr justo clita lorem ipsum dolor at sed stet sit diam rebum ipsum et diam justo clita et</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    Facts Start -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container about px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/logo.jpg" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
+                        <h1 class="display-5 mb-4">Sobre Nosotros</h1>
+                        <h5 class="mb-4 pb-2" style="color: gray;">En MaderColor nos apasiona transformar espacios con materiales de la más alta calidad. Somos una empresa emergente dedicada a la venta de maderas, placas, pinturas y muebles, diseñados para durar y destacar. Nos enorgullece ofrecer productos seleccionados rigurosamente, combinando durabilidad, diseño y precios competitivos. Ya sea para tu hogar, negocio o proyecto personal, trabajamos contigo para brindarte soluciones a medida, con asesoramiento experto y un servicio cercano. Descubre cómo podemos hacer realidad tus ideas con materiales que marcan la diferencia.</h5>
+                     <!--   <div class="row g-4 mb-4 pb-3">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
+                                        <img class="img-fluid" src="img/icon/icon-1.png" alt="Icon">
+                                    </div>
+                                    <div class="ms-4">
+                                        <h2 class="mb-1" data-toggle="counter-up">Clientes Felices</h2>
+                                        <p class="fw-medium text-primary mb-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
+                                        <img class="img-fluid" src="img/icon/icon-5.png" alt="Icon">
+                                    </div>
+                                    <div class="ms-4">
+                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                        <p class="fw-medium text-primary mb-0">Projects Done</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <a href="" class="btn btn-primary rounded-pill py-3 px-5">Saber Más...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center">
+                <div class="bg-primary mb-3 mx-auto" style="width: 60px; height: 2px;"></div>
+                <h1 class="display-5 mb-5">Nuestros Productos</h1>
+            </div>
+            <div class="row g-0 service-row">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-item border h-100 p-5">
+                        <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                            <img class="img-fluid" src="img/icon/icon-madera.png" alt="Icon">
+                        </div>
+                        <h4 class="mb-3">Línea Maderas</h4>
+                        <p class="mb-4">Maderas de primera calidad para mobiliario elegante y construcciones duraderas. Excelencia en cada fibra, resistencia y belleza natural para tus proyectos más exigentes.</p>
+                        <a class="btn" href=""><i class="fa fa-arrow-right text-white me-3"></i>Ver Más...</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="service-item border h-100 p-5">
+                        <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                            <img class="img-fluid" src="img/icon/icono-tablero.png" alt="Icon">
+                        </div>
+                        <h4 class="mb-3">Línea de Placas</h4>
+                        <p class="mb-4">Placas para mobiliario de alto diseño (tableros de pino, MDF, terciados) y Fenólicos para construcciones sólidas. Calidad, estabilidad y versatilidad en cada proyecto.</p>
+                        <a class="btn" href=""><i class="fa fa-arrow-right text-white me-3"></i>Ver Más...</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="service-item border h-100 p-5">
+                        <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                            <img class="img-fluid" src="img/icon/icono-pinturas.png" alt="Icon">
+                        </div>
+                        <h4 class="mb-3">Línea de Pinturas</h4>
+                        <p class="mb-4">Pinturas de alto rendimiento para mobiliario y construcción: acabados impecables, máxima durabilidad y colores que inspiran. Protege y embellece cualquier superficie con calidad profesional</p>
+                        <a class="btn" href=""><i class="fa fa-arrow-right text-white me-3"></i>Ver Más...</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="service-item border h-100 p-5">
+                        <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                            <img class="img-fluid" src="img/icon/icono-mueble.png" alt="Icon">
+                        </div>
+                        <h4 class="mb-3">Línea Mobiliario</h4>
+                        <p class="mb-4">Muebles de pino y MDF: calidad duradera al mejor precio. Elegancia natural, resistencia y diseños versátiles para cada espacio de tu hogar o negocio. Estilo y funcionalidad sin pagar de más</p>
+                        <a class="btn" href=""><i class="fa fa-arrow-right text-white me-3"></i>Ver Más...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
+                        <h1 class="display-5 mb-5">Por Qué Elegirnos?</h1>
+                        <p class="mb-4 pb-2">En MaderColor somos tu solución integral en maderas, placas, pinturas y muebles de la más alta calidad. Ofrecemos:</p>
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
+                                        <img class="img-fluid" src="img/icon/icono-precio.png" alt="Icon">
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-primary mb-2">Precios</p>
+                                        <h5 class="mb-0">Competitivos</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
+                                        <img class="img-fluid" src="img/icon/icono-garantia.png" alt="Icon">
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-primary mb-2">Garantía</p>
+                                        <h5 class="mb-0">Calidad</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
+                                        <img class="img-fluid" src="img/icon/icono-stock.png" alt="Icon">
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-primary mb-2">Variedad</p>
+                                        <h5 class="mb-0">Stock</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
+                                        <img class="img-fluid" src="img/icon/icono-asesoria.png" alt="Icon">
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-primary mb-2">Asesoría</p>
+                                        <h5 class="mb-0">Experta</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/portada.png" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    <!-- Projects Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="bg-primary mb-3 mx-auto" style="width: 60px; height: 2px;"></div>
+                <h1 class="display-5 mb-5">Ofertas Destacadas</h1>
+            </div>
+            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-12 text-center">
+                    <ul class="list-inline mb-5" id="portfolio-flters">
+                        <li class="mx-2 active" data-filter="*">Todos</li>
+                        <li class="mx-2" data-filter=".first">Placas</li>
+                        <li class="mx-2" data-filter=".second">Mobiliario</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row g-4 portfolio-container">
+                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner">
+                        <img class="img-fluid w-100" src="img/publiFenolico18.png" alt="">
+                        <div class="text-center p-4">
+                            <p class="text-primary mb-2">Fenólicos</p>
+                            <h5 class="lh-base mb-0">Fenólicos de pino calidad Industrial de 18mm</h5>
+                        </div>
+                        <div class="portfolio-text text-center bg-white p-4">
+                            <p class="text-primary mb-2">Ver ó Consultar</p>
+                       <!--     <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5> -->
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/publiFenolico18.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                             <a class="btn btn-square btn-primary rounded-circle mx-1" href="https://walink.co/e94479"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="portfolio-inner">
+                        <img class="img-fluid w-100" src="img/tableroPino.png" alt="">
+                        <div class="text-center p-4">
+                            <p class="text-primary mb-2">Tableros de Pino</p>
+                            <h5 class="lh-base mb-0">Tableros Finger de Pino de 16mm</h5>
+                        </div>
+                        <div class="portfolio-text text-center bg-white p-4">
+                            <p class="text-primary mb-2">Ver ó Consultar</p>
+                         <!--   <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5> -->
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/tableroPino.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="https://walink.co/e94479"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="portfolio-inner">
+                        <img class="img-fluid w-100" src="img/publiMdf.png" alt="">
+                        <div class="text-center p-4">
+                            <p class="text-primary mb-2">MDF Crudo</p>
+                            <h5 class="lh-base mb-0">Placas de MDf Crudo de 9mm de espesor</h5>
+                        </div>
+                        <div class="portfolio-text text-center bg-white p-4">
+                            <p class="text-primary mb-2">Ver ó Consultar</p>
+                         <!--  <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5> -->
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/publiMdf.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="https://walink.co/e94479"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner">
+                        <img class="img-fluid w-100" src="img/destacados-alacena.png" alt="">
+                        <div class="text-center p-4">
+                            <p class="text-primary mb-2">Alacenas</p>
+                            <h5 class="lh-base mb-0">Alacena de Pared de Madera de Pino</h5>
+                        </div>
+                        <div class="portfolio-text text-center bg-white p-4">
+                            <p class="text-primary mb-2">Ver ó Consultar</p>
+                       <!--     <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5> -->
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/destacados-alacena.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="https://walink.co/e94479"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="portfolio-inner">
+                        <img class="img-fluid w-100" src="img/destacados-bajomesada.png" alt="">
+                        <div class="text-center p-4">
+                            <p class="text-primary mb-2">Bajomesada</p>
+                            <h5 class="lh-base mb-0">Bajomesada en Madera de Pino</h5>
+                        </div>
+                        <div class="portfolio-text text-center bg-white p-4">
+                            <p class="text-primary mb-2">Ver ó Consultar</p>
+                        <!--    <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5> -->
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/destacados-bajomesada.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="https://walink.co/e94479"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="portfolio-inner">
+                        <img class="img-fluid w-100" src="img/destacados-comedor6.png" alt="">
+                        <div class="text-center p-4">
+                            <p class="text-primary mb-2">Juego de Comedor</p>
+                            <h5 class="lh-base mb-0">Juego de Comedor de 6 Asientos</h5>
+                        </div>
+                        <div class="portfolio-text text-center bg-white p-4">
+                            <p class="text-primary mb-2">Ver ó Consultar</p>
+                  <!--          <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5> -->
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/destacados-comedor6.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="https://walink.co/e94479"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="portfolio-inner">
+                        <img class="img-fluid w-100" src="img/destacados-comedor4.png" alt="">
+                        <div class="text-center p-4">
+                            <p class="text-primary mb-2">Juego de Comedor</p>
+                            <h5 class="lh-base mb-0">Juego de Comedor de 4 Asientos</h5>
+                        </div>
+                        <div class="portfolio-text text-center bg-white p-4">
+                            <p class="text-primary mb-2">Ver ó Consultar</p>
+                     <!--      <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5> -->
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/destacados-comedor4.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="https://walink.co/e94479"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+       <!--      <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="portfolio-inner">
+                        <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
+                        <div class="text-center p-4">
+                            <p class="text-primary mb-2">Smart Home</p>
+                            <h5 class="lh-base mb-0">Smart CCTV Security Systems That Fits Your Business</h5>
+                        </div>
+                        <div class="portfolio-text text-center bg-white p-4">
+                            <p class="text-primary mb-2">Smart Home</p>
+                            <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="portfolio-inner">
+                        <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
+                        <div class="text-center p-4">
+                            <p class="text-primary mb-2">Smart Home</p>
+                            <h5 class="lh-base mb-0">Smart CCTV Security Systems That Fits Your Business</h5>
+                        </div>
+                        <div class="portfolio-text text-center bg-white p-4">
+                            <p class="text-primary mb-2">Smart Home</p>
+                            <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Projects End -->
+
+
+    <!-- Quote Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container quote px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/logo.jpg" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
+                        <h1 class="display-5 mb-5">¿Necesitas asesoría o cotización?</h1>
+                        <p class="mb-4 pb-2">Explora nuestra web y descubre la mejor calidad en maderas, placas, pinturas y muebles. Si tienes dudas o quieres un presupuesto personalizado, ¡escríbenos! Estamos aquí para ayudarte.</p>
+                        <form id="contact-form">
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Nombre" name="name" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Email" name="email" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Teléfono" style="height: 55px;">
+                                </div>
+                           <!--     <div class="col-12 col-sm-6">
+                                    <select class="form-select border-0" style="height: 55px;">
+                                        <option selected>Select A Service</option>
+                                        <option value="1">Service 1</option>
+                                        <option value="2">Service 2</option>
+                                        <option value="3">Service 3</option>
+                                    </select>
+                                </div> -->
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="Mensaje" name="message" ></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit" name="send message" value="Enviar">Enviar Mensaje</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+
+
+    <!-- Team Start 
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="bg-primary mb-3 mx-auto" style="width: 60px; height: 2px;"></div>
+                <h1 class="display-5 mb-5">Team Members</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="overflow-hidden position-relative">
+                            <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Full Name</h5>
+                            <span class="text-primary">Designation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="overflow-hidden position-relative">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Full Name</h5>
+                            <span class="text-primary">Designation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="overflow-hidden position-relative">
+                            <img class="img-fluid" src="img/team-3.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Full Name</h5>
+                            <span class="text-primary">Designation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="overflow-hidden position-relative">
+                            <img class="img-fluid" src="img/team-4.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-dark rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Full Name</h5>
+                            <span class="text-primary">Designation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="bg-primary mb-3 mx-auto" style="width: 60px; height: 2px;"></div>
+                <h1 class="display-5 mb-5"></h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/motivacion.jpg' alt=''>">
+                    <p class="fs-5">Cada detalle cuenta, porque en la calidad está la grandeza.</p>
                    
-               </div>
-
-               <!-- MENU LINKS -->
-               <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#top" class="smoothScroll">INICIO</a></li>
-                         <li><a href="#team" class="smoothScroll">PRODUCTOS</a></li>
-                         <li><a href="#courses" class="smoothScroll">OFERTAS</a></li>
-                         <li><a href="#contact" class="smoothScroll">CONTACTO</a></li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                         <li><a href="https://wa.link/twd3vy"><i class="fa fa-whatsapp"></i>362 5181576</a></li>
-                    </ul>
-               </div>
-
-          </div>
-     </section>
-
-
-     <!-- HOME -->
-     <section id="home">
-          <div class="row">
-
-                    <div class="owl-carousel owl-theme home-slider">
-                         <div class="item item-first">
-                              <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-6 col-sm-12">
-                                             <h1>Somos MaderColor</h1>
-                                             <h3><strong>Descubre los mejores materiales para tus proyectos: maderas de primera calidad, pinturas duraderas y herrajes resistentes. Estamos listos para ofrecerte productos premium y asesoría experta al mejor precio.</strong></h3>
-                                            
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
-                         <div class="item item-second">
-                              <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-6 col-sm-12">
-                                             <h1>Maderas - Tableros - MDF - Terciados</h1>
-                                             <h3><strong>Descubre la excelencia en cada proyecto con nuestras maderas y derivados de la más alta calidad. Transformamos tus ideas en realidad con productos duraderos y sostenibles, elige lo mejor para construir con pasión.</strong></h3>
-                                            
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
-
-                         <div class="item item-third">
-                              <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-6 col-sm-12">
-                                             <h1>Pinturas - Impregnantes - Barnices</h1>
-                                             <h3><strong>Embellece tu madera con nuestras pinturas y derivados de la mejor calidad. Ofrecemos acabados que resaltan la belleza natural, brindando durabilidad y protección para que tus proyectos luzcan siempre impecables. ¡Elige lo mejor para tus superficies de madera!</strong></h3>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
-
-                         <div class="item item-fourth">
-                              <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-6 col-sm-12">
-                                             <h1>Herrajes - Adhesivos - Tornillos</h1>
-                                             <h3><strong>Todo lo que necesitas para tus proyectos en un solo lugar. Además de maderas de primera calidad, encontrarás para completar tu trabajo los mejores materiales y accesorios de calidad </strong></h3>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-          </div>
-     </section>
-
-
-     <!-- FEATURE -->
-    
-
-     <!--SERVICES -->
-     <section id="about">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-4 col-sm-4">
-                         <div class="feature-thumb">
-                              <span>01</span>
-                              <h3>¡Tu proyecto comienza con la mejor madera!</h3>
-                              <p>En MaderColor, te asesoramos sin cargo y realizamos cotizaciones personalizadas para que encuentres exactamente lo que necesitas. Calidad, variedad y precios competitivos. ¡Contáctanos y haz realidad tus ideas! </p>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                         <div class="feature-thumb">
-                              <span>02</span>
-                              <h3>Desde la selección hasta el resultado final, estamos contigo</h3>
-                              <p>En MaderColor, no solo vendemos madera de la más alta calidad, ¡te acompañamos después de la compra! Asesoramiento, seguimiento y soluciones a medida para garantizar el éxito de tu proyecto.</p>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                         <div class="feature-thumb">
-                              <span>03</span>
-                              <h3>¡Madera de calidad directo a tu obra o taller!</h3>
-                              <p>En MaderColor, te llevamos nuestros productos hasta donde los necesites con envíos a domicilio desde un mínimo costo. Sin complicaciones, rápido, seguro y a una amplia zona de cobertura.</p>
-                         </div>
-                    </div>
-
-               </div>
-          </div>
-     </section>
-
-    
-
-     <!--PRODUCTS -->
-     <section id="team">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-                         <div class="section-title">
-                              <h2>PRODUCTOS <small>Conocé las categorías de productos que comercializamos</small></h2>
-                         </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                         <div class="team-thumb">
-                              <div class="team-image">
-                                   <img src="images/productoMadera.jpg" class="img-responsive" alt="maderas">    
-                                  
-                              </div>
-                              <div class="team-info">
-                                 
-                                   <a href="./assets/precioMaderas.pdf"><button type="button" class="btn btn-success" id="boton"><h5>Ver Maderas Y Derivados</h5></button></a>
-                              </div>
-                              </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                         <div class="team-thumb">
-                              <div class="team-image">
-                                   <img src="images/madera_pinturas.JPG" class="img-responsive" alt="maderas">    
-                                  
-                              </div>
-                              <div class="team-info">
-                                 
-                                   <a href="./assets/listaPinturas.pdf"><button type="button" class="btn btn-success" id="boton"><h5>Ver Pinturas Y Derivados</h5></button></a>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                         <div class="team-thumb">
-                              <div class="team-image">
-                                   <img src="images/herrajesProducto.jpg" class="img-responsive" alt="maderas">    
-                                  
-                              </div>
-                              <div class="team-info">
-                                 
-                                   <a href="./assets/listaHerrajes.pdf"><button type="button" class="btn btn-success" id="boton"><h5>Ver Lista De Herrajes</h5></button></a>
-                              </div>
-                            
-                         </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                         <div class="team-thumb">
-                              <div class="team-image">
-                                   <img src="images/productoVarios.jpg" class="img-responsive" alt="maderas">    
-                                  
-                              </div>
-                              <div class="team-info">
-                                 
-                                   <a href="./assets/listaVarios.pdf"><button type="button" class="btn btn-success" id="boton"><h5>Ver Artículos Varios</h5></button></a>
-                              </div>
-                             </div>
-                    </div>
-
-               </div>
-          </div>
-     </section>
-
-
-     <!-- OFERT -->
-     <section id="courses">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-                         <div class="section-title">
-                              <h2>OFERTAS INSUPERABLES <small>Calidad no tiene que costar más: Ahorra con nuestras ofertas exclusivas</small></h2>
-                         </div>
-
-                         <div class="owl-carousel owl-theme owl-courses">
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="courses-thumb">
-                                             <div class="courses-top">
-                                                  <div class="courses-image">
-                                                       <img src="./images/ofertaMachimbre.png" class="img-responsive" alt="Oferta">
-                                                  </div>
-                                                  <div class="courses-price">
-                                                       <a href="https://wa.link/twd3vy"><span>Consultar</span></a>
-                                                  </div>
-                                             </div>
-
-                                        </div>
-                                   </div>
-                              </div>
-
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="courses-thumb">
-                                             <div class="courses-top">
-                                                  <div class="courses-image">
-                                                       <img src="./images/ofertaTableroFinger.png" class="img-responsive" alt="Oferta">
-                                                  </div>
-                                                  <div class="courses-price">
-                                                       <a href="https://wa.link/twd3vy"><span>Consultar</span></a>
-                                                  </div>
-                                             </div>
-
-                                        </div>
-                                   </div>
-                              </div>
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="courses-thumb">
-                                             <div class="courses-top">
-                                                  <div class="courses-image">
-                                                       <img src="./images/ofertaMdf9.png" class="img-responsive" alt="Oferta">
-                                                  </div>
-                                                  <div class="courses-price">
-                                                       <a href="https://wa.link/i71lte"><span>Consultar</span></a>
-                                                  </div>
-                                             </div>
-
-                                                                                       
-                                        </div>
-                                   </div>
-                              </div>
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="courses-thumb">
-                                             <div class="courses-top">
-                                                  <div class="courses-image">
-                                                       <img src="./images/ofertaFenolico.png" class="img-responsive" alt="Oferta">
-                                                  </div>
-                                                  <div class="courses-price">
-                                                       <a href="https://wa.link/twd3vy"><span>Consultar</span></a>
-                                                  </div>
-                                             </div>
-
-                                                                                       
-                                        </div>
-                                   </div>
-                              </div>
-
-
-                             
-
-                         </div>
-
-               </div>
-          </div>
-     </section>
-
-     <!-- CONTACT -->
-     <section id="contact">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-6 col-sm-12">
-                         <form id="contact-form">
-                              <div class="section-title">
-                                   <h2>CONTACTO <small>Tu proyecto es importante. Contactános y hagámoslo realidad juntos</small></h2>
-                              </div>
-
-                              <div class="col-md-12 col-sm-12">
-                               
-                                   <input type="text" class="form-control" placeholder="Ingrese Su Nombre" name="name" required="">
-                    
-                                   <input type="email" class="form-control" placeholder="Ingrese Su Email" name="email" required="">
-
-                                   <textarea class="form-control" rows="6" placeholder="Ingrese El Mensaje" name="message" required=""></textarea>
-                              </div>
-
-                              <div class="col-md-4 col-sm-12">
-                                   <input type="submit" class="form-control" name="send message" value="Enviar">
-                              </div>
-
-                         </form>
-                    </div>
-
-                    <div class="col-md-6 col-sm-12">
-                         <div class="contact-image">
-                              <img src="images/logo.png" class="img-responsive" id="logo">
-                         </div>
-                    </div>
-
-               </div>
-          </div>
-     </section>       
-
-
-     <!-- FOOTER -->
-     <footer id="footer">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-4 col-sm-6">
-                         <div class="footer-info">
-                              <div class="section-title">
-                                   <h2>Ubicación</h2>
-                              </div>
-                              <address>
-                                   <p><br>Fontana - Chaco - Argentina</p>
-                              </address>
+                    <span class="text-primary">Anónimo</span>
+                </div>
+                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/motivacion.jpg' alt=''>">
+                    <p class="fs-5">No es sobre las ideas, sino sobre haer que éstas se vuelvan realidad.</p>
                  
+                    <span class="text-primary">Anónimo</span>
+                </div>
+                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/motivacion.jpg' alt=''>">
+                    <p class="fs-5">Mira de cerca el presente que estás construyendo, porque debe parecerse al futuro con el que sueñas.</p>
+                    
+                    <span class="text-primary">Anónimo</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
 
-                              <div class="copyright-text"> 
-                                   
-                              </div>
-                         </div>
-                    </div>
 
-                    <div class="col-md-4 col-sm-6">
-                         <div class="footer-info">
-                              <div class="section-title">
-                                   <h2>Contacto</h2>
-                              </div>
-                              <address>
-                                   <p>+54 362 5181576</p>
-                                   <p><a href="mailto:youremail.co">madercolorchaco@gmail.com</a></p>
-                              </address>
-                              <ul class="social-icon">
-                                   <li><a href="https://www.facebook.com/profile.php?id=61575642027259" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                                   
-                                   <li><a href="https://www.instagram.com/madercolor_chaco/?hl=es" class="fa fa-instagram"></a></li>
-                              </ul>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12">
-                         <div class="footer-info newsletter-form">
-                              <div class="section-title">
-                                   <h2>MaderColor</h2>
-                              </div>
-                              <div class="footer_menu">
-                                   <p>Copyright &copy; 2025 MaderColor</p>
-                                   <p>Design: Alejandro Bermudez</p>
-                              </div>
-                         </div>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-secondary footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+              <!--      <h5 class="text-light mb-4">Contacto</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Fontana, Chaco, Argentina</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>3625181576</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>madercolorchaco@gmail.com</p> -->
+                   
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Contacto</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Fontana, Chaco, Argentina</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>3625181576</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>madercolorchaco@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Link's</h5>
+                    <a class="btn btn-link" href="">Ofertas Destacadas</a>
+                     <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     
-               </div>
-          </div>
-     </footer>
+                </div>
+  <!--              <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Newsletter</h5>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative w-100">
+                        <input class="form-control bg-transparent border-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Footer End -->
 
 
-     <!-- SCRIPTS -->
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Copyright Start -->
+    <div class="container-fluid py-4" style="background: #000000;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">MaderColor Chaco</a>, Todos los derechos reservados.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    Designed By <a class="border-bottom" href="https://webimpulse.vercel.app/">Web Impulse</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
      <script type="text/javascript">
           (function() {
               // https://dashboard.emailjs.com/admin/account
@@ -451,11 +784,18 @@
               });
           }
       </script>
-     <script src="js/jquery.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/owl.carousel.min.js"></script>
-     <script src="js/smoothscroll.js"></script>
-     <script src="js/custom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
 
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
